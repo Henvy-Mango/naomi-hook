@@ -1,0 +1,1 @@
+-keep class plus.naomi.mod.example.MainHook
