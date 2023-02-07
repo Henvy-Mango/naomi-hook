@@ -13,7 +13,6 @@ abstract class HookInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     private val TAG = "NaomiMod"
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam?) {
-
         packageParam = lpparam!!
         registeredApp.forEach { app ->
             if (app.packageName == lpparam.packageName) {
