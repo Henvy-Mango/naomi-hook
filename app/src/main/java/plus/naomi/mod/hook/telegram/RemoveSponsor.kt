@@ -16,7 +16,7 @@ object RemoveSponsor : HookRegister() {
 
     override fun init() {
         MethodFinder.fromClass(ClassUtils.loadClass("org.telegram.messenger.MessagesController"))
-            .filterByName("getSponsoredMessages").onEach {
+            .filterByName("getSponsoredMessages").forEach {
                 it.createHook {
                     Log.dx(it.name)
                     returnConstant(null)
@@ -24,7 +24,7 @@ object RemoveSponsor : HookRegister() {
             }
 
         MethodFinder.fromClass(ClassUtils.loadClass("org.telegram.ui.ChatActivity"))
-            .filterByName("addSponsoredMessages").onEach {
+            .filterByName("addSponsoredMessages").forEach {
                 it.createHook {
                     returnConstant(null)
                 }

@@ -19,6 +19,7 @@ abstract class HookInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                 EzXHelper.apply {
                     setLogTag(TAG)
                     setToastTag(TAG)
+                    enableFinderExceptionMessage()
                     initHandleLoadPackage(lpparam)
                 }
                 runCatching { app.handleLoadPackage(lpparam) }.logexIfThrow("Failed call handleLoadPackage, package: ${app.packageName}")
