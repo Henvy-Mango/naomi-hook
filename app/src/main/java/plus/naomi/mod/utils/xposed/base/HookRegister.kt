@@ -3,7 +3,7 @@ package plus.naomi.mod.utils.xposed.base
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 abstract class HookRegister {
-    protected lateinit var lpparam: XC_LoadPackage.LoadPackageParam
+    private lateinit var lpparam: XC_LoadPackage.LoadPackageParam
     var isInit: Boolean = false
     abstract fun init()
 
