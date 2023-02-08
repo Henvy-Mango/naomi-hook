@@ -12,7 +12,7 @@ import plus.naomi.mod.utils.xposed.base.AppRegister
  *
  */
 object Via : AppRegister() {
-    override val packageName = "mark.via"
+    override val packageName = setOf("mark.via")
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         // TODO DexKit, now only work on 4.4.7

@@ -10,7 +10,7 @@ import plus.naomi.mod.utils.xposed.base.AppRegister
  *
  */
 object Bilibili : AppRegister() {
-    override val packageName = "tv.danmaku.bili"
+    override val packageName = setOf("tv.danmaku.bili")
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         autoInitHooks(
