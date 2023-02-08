@@ -11,7 +11,7 @@ import plus.naomi.mod.utils.xposed.base.AppRegister
  *
  */
 object Telegram : AppRegister() {
-    override val packageName = "nekox.messenger"
+    override val packageName = setOf("nekox.messenger", "xyz.nextalone.nagram")
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         autoInitHooks(

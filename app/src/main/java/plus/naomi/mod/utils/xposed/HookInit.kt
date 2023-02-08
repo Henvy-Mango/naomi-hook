@@ -15,7 +15,7 @@ abstract class HookInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam?) {
         packageParam = lpparam!!
         registeredApp.forEach { app ->
-            if (app.packageName == lpparam.packageName) {
+            if (app.packageName.contains(lpparam.packageName)) {
                 EzXHelper.apply {
                     setLogTag(TAG)
                     setToastTag(TAG)
