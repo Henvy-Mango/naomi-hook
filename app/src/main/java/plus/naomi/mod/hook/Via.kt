@@ -1,9 +1,9 @@
 package plus.naomi.mod.hook
 
-import com.github.kyuubiran.ezxhelper.ClassUtils.loadClass
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
-import com.github.kyuubiran.ezxhelper.finders.MethodFinder
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+import io.luckypray.dexkit.DexKitBridge
+import io.luckypray.dexkit.enums.MatchType
 import plus.naomi.mod.utils.xposed.base.AppRegister
 
 /**
@@ -15,9 +15,21 @@ object Via : AppRegister() {
     override val packageName = setOf("mark.via")
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        // TODO DexKit, now only work on 4.4.7
-        MethodFinder.fromClass(loadClass("i.a.r.c.a"))
-            .filterByName("s").filterByParamTypes(loadClass("i.a.r.c.b")).firstOrNull()?.createHook { interrupt() }
+        System.loadLibrary("dexkit")
+
+        val apkPath = lpparam.appInfo.sourceDir
+        val classLoader = lpparam.classLoader
+        DexKitBridge.create(apkPath)?.apply {
+            use { bridge ->
+                bridge.findMethodUsingString {
+                    usingString = "di5xcS5jb20="
+                    matchType = MatchType.FULL
+                }.first().getMethodInstance(classLoader).createHook {
+                    interrupt()
+                }
+            }
+            close()
+        }
     }
 
 }
