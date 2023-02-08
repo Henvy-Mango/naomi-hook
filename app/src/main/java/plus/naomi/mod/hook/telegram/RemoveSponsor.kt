@@ -2,7 +2,6 @@ package plus.naomi.mod.hook.telegram
 
 import com.github.kyuubiran.ezxhelper.ClassUtils
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
-import com.github.kyuubiran.ezxhelper.Log
 import com.github.kyuubiran.ezxhelper.finders.MethodFinder
 import plus.naomi.mod.utils.xposed.base.HookRegister
 
@@ -18,7 +17,6 @@ object RemoveSponsor : HookRegister() {
         MethodFinder.fromClass(ClassUtils.loadClass("org.telegram.messenger.MessagesController"))
             .filterByName("getSponsoredMessages").forEach {
                 it.createHook {
-                    Log.dx(it.name)
                     returnConstant(null)
                 }
             }

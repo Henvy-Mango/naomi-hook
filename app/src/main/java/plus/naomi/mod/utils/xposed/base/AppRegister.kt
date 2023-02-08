@@ -1,8 +1,8 @@
 package plus.naomi.mod.utils.xposed.base
 
-import com.github.kyuubiran.ezxhelper.Log.logexIfThrow
+import com.github.kyuubiran.ezxhelper.Log
+import com.github.kyuubiran.ezxhelper.LogExtensions.logexIfThrow
 import de.robv.android.xposed.IXposedHookLoadPackage
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 abstract class AppRegister: IXposedHookLoadPackage {
@@ -13,7 +13,7 @@ abstract class AppRegister: IXposedHookLoadPackage {
 
     protected fun autoInitHooks(lpparam: XC_LoadPackage.LoadPackageParam, vararg hook: HookRegister) {
         hook.also {
-            XposedBridge.log("Try to Hook [$packageName]")
+            Log.dx("Try to Hook [$packageName]")
         }.forEach {
             runCatching {
                 if (it.isInit) return@forEach
