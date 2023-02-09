@@ -1,1 +1,1 @@
--keep class plus.naomi.mod.example.MainHook
+-keep class plus.naomi.hook.XposedEntry

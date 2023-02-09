@@ -6,8 +6,10 @@ plugins {
 android {
     compileSdk = 33
 
+    namespace = "plus.naomi.hook"
+
     defaultConfig {
-        applicationId = "plus.naomi.mod"
+        applicationId = "plus.naomi.hook"
         minSdk = 31
         targetSdk = 33
         versionCode = 1

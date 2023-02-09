@@ -1,9 +1,9 @@
-package plus.naomi.mod.hook.telegram
+package plus.naomi.hook.hook.telegram
 
 import com.github.kyuubiran.ezxhelper.ClassUtils.loadClass
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
 import com.github.kyuubiran.ezxhelper.finders.MethodFinder
-import plus.naomi.mod.utils.xposed.base.HookRegister
+import plus.naomi.hook.utils.xposed.base.HookRegister
 
 
 /**

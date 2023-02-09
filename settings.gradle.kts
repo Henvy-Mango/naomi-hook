@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 }
 
 include(":app")
-rootProject.name = "Naomi-Mod"
+rootProject.name = "Naomi-Hook"
 

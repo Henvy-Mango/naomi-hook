@@ -1,10 +1,10 @@
-package plus.naomi.mod.hook
+package plus.naomi.hook.hook
 
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 import io.luckypray.dexkit.DexKitBridge
 import io.luckypray.dexkit.enums.MatchType
-import plus.naomi.mod.utils.xposed.base.AppRegister
+import plus.naomi.hook.utils.xposed.base.AppRegister
 
 /**
  * @author Naomi

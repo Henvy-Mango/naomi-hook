@@ -1,8 +1,8 @@
-package plus.naomi.mod.hook
+package plus.naomi.hook.hook
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import plus.naomi.mod.hook.bilibili.UnlockBigAccount
-import plus.naomi.mod.utils.xposed.base.AppRegister
+import plus.naomi.hook.hook.bilibili.UnlockBigAccount
+import plus.naomi.hook.utils.xposed.base.AppRegister
 
 /**
  * @author Naomi
