@@ -1,11 +1,11 @@
-package plus.naomi.mod.utils.xposed;
+package plus.naomi.hook.utils.xposed;
 
 import com.github.kyuubiran.ezxhelper.EzXHelper
 import com.github.kyuubiran.ezxhelper.LogExtensions.logexIfThrow
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import plus.naomi.mod.utils.xposed.base.AppRegister
+import plus.naomi.hook.utils.xposed.base.AppRegister
 
 abstract class HookInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     private lateinit var packageParam: XC_LoadPackage.LoadPackageParam

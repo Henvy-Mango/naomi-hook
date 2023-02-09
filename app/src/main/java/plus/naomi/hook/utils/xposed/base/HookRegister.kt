@@ -1,4 +1,4 @@
-package plus.naomi.mod.utils.xposed.base
+package plus.naomi.hook.utils.xposed.base
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 

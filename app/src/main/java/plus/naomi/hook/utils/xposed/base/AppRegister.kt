@@ -1,4 +1,4 @@
-package plus.naomi.mod.utils.xposed.base
+package plus.naomi.hook.utils.xposed.base
 
 import com.github.kyuubiran.ezxhelper.Log
 import com.github.kyuubiran.ezxhelper.LogExtensions.logexIfThrow
