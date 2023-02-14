@@ -18,17 +18,14 @@ object Via : AppRegister() {
         System.loadLibrary("dexkit")
 
         val apkPath = lpparam.appInfo.sourceDir
-        val classLoader = lpparam.classLoader
-        DexKitBridge.create(apkPath)?.apply {
-            use { bridge ->
-                bridge.findMethodUsingString {
-                    usingString = "di5xcS5jb20="
-                    matchType = MatchType.FULL
-                }.first().getMethodInstance(classLoader).createHook {
-                    interrupt()
-                }
+        DexKitBridge.create(apkPath)?.use { bridge ->
+            val classLoader = lpparam.classLoader
+            bridge.findMethodUsingString {
+                usingString = "di5xcS5jb20seW91a3UuY29tLGlxaXlpLmNvbSxtZ3R2LmNvbSxiaWxpYmlsaS5jb20="
+                matchType = MatchType.FULL
+            }.first().getMethodInstance(classLoader).createHook {
+                interrupt()
             }
-            close()
         }
     }
 
