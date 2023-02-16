@@ -9,8 +9,8 @@ import plus.naomi.hook.utils.xposed.base.AppRegister
 class XposedEntry : HookInit() {
     override val registeredApp: List<AppRegister> =
         listOf(
-            Telegram,
             Bilibili,
+            Telegram,
             Via
         )
 }
