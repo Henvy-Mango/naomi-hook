@@ -3,6 +3,11 @@ name: Build CI
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - '**.md'
+      - '**.txt'
+      - '.github/**'
+      - '!.github/workflows/**'
 
 jobs:
   build:
