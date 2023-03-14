@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Naomi Hook</string>
-    <string name="xposed_desc">
-        Bilibili解锁大会员画质，Via 移除大厂白名单\nNekoX移除广告、移除群组保存限制
-    </string>
+    <string name="xposed_desc">Bilibili解锁大会员画质，Via 移除大厂白名单\nNekoX移除广告、移除群组保存限制</string>
 </resources>
