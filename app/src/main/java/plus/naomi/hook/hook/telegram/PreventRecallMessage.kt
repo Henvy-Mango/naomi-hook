@@ -11,14 +11,14 @@ import plus.naomi.hook.utils.xposed.base.HookRegister
  * @date 2023/2/7 11:21
  *
  */
-object AllowSaveMessage : HookRegister() {
+object PreventRecallMessage : HookRegister() {
 
     override fun init() {
-        MethodFinder.fromClass(loadClass("org.telegram.messenger.MessagesController"))
-            .filterByName("isChatNoForwards")
+        MethodFinder.fromClass(loadClass("org.telegram.messenger.MessagesStorage"))
+            .filterByName("markMessagesAsDeleted")
             .forEach {
                 it.createHook {
-                    returnConstant(false)
+                    returnConstant(null)
                 }
             }
     }

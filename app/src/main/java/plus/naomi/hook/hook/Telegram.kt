@@ -2,6 +2,7 @@ package plus.naomi.hook.hook
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 import plus.naomi.hook.hook.telegram.AllowSaveMessage
+import plus.naomi.hook.hook.telegram.PreventRecallMessage
 import plus.naomi.hook.hook.telegram.RemoveSponsor
 import plus.naomi.hook.utils.xposed.base.AppRegister
 
@@ -17,6 +18,7 @@ object Telegram : AppRegister() {
         autoInitHooks(
             lpparam,
             AllowSaveMessage,
+            PreventRecallMessage,
             RemoveSponsor,
         )
     }

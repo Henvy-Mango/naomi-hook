@@ -15,14 +15,16 @@ object RemoveSponsor : HookRegister() {
 
     override fun init() {
         MethodFinder.fromClass(ClassUtils.loadClass("org.telegram.messenger.MessagesController"))
-            .filterByName("getSponsoredMessages").forEach {
+            .filterByName("getSponsoredMessages")
+            .forEach {
                 it.createHook {
                     returnConstant(null)
                 }
             }
 
         MethodFinder.fromClass(ClassUtils.loadClass("org.telegram.ui.ChatActivity"))
-            .filterByName("addSponsoredMessages").forEach {
+            .filterByName("addSponsoredMessages")
+            .forEach {
                 it.createHook {
                     returnConstant(null)
                 }
